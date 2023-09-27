@@ -8,7 +8,10 @@ resource "digitalocean_droplet" "this" {
   monitoring = true
   backups    = var.droplet_backups
   ssh_keys   = local.ssh_fingerprints
-  tags       = local.tags
+  tags       = concat(
+                local.tags,
+                ["workloads-${each.value.slugs}"]
+               )
 }
 
 resource "digitalocean_ssh_key" "this" {
