@@ -7,7 +7,7 @@ Regional Deployment of DigitalOcean-specific Resources
 | Name | Description | Type | Required |
 |------|-------------|------|:--------:|
 | do_token | DO API token with read and write permissions. | `string` | yes |
-| domain | Domain name where the Supabase instance is accessible. The final domain will be of the format `supabase.example.com` | `string` | yes |
+| domain | Domain name where the Workloads instances are accessible. The final domain will be of the format `region.workloads.example.com` | `string` | yes |
 | spaces_access_key_id | Access key ID used for Spaces API operations. | `string` | yes |
 | spaces_secret_access_key | Secret access key used for Spaces API operations. | `string` | yes |
 | db_ip_range | An array of strings containing the IPv4 addresses and/or IPv4 CIDRs from which the inbound traffic will be accepted for the Database. Defaults to ALL IPv4s but it is highly suggested to choose a smaller subset. | `list(string)` | no |

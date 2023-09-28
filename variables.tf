@@ -37,7 +37,7 @@ variable "no_regions" {
 
 # Domain Variables
 variable "domain" {
-  description = "Domain name where the Workloads instances are accessible. The final domain will be of the format `\$\{region\}.workloads.\$\{example.com\}`"
+  description = "Domain name where the Workloads instances are accessible. The final domain will be of the format `region.workloads.example.com`"
   type        = string
 }
 
