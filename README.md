@@ -22,7 +22,7 @@ Regional Deployment of DigitalOcean-specific Resources
 | ssh_ip_range | An array of strings containing the IPv4 addresses and/or IPv4 CIDRs from which the inbound traffic will be accepted for SSH. Defaults to ALL IPv4s but it is highly suggested to choose a smaller subset. | `list(string)` | no |
 | ssh_keys | A list of SSH key IDs or fingerprints to enable in the format [12345, 123456]. Only one of `var.ssh_keys` or `var.ssh_pub_file` needs to be specified and should be used. | `list(string)` | no |
 | ssh_pub_file | The path to the public key ssh file. Only one of var.ssh_pub_file or var.ssh_keys needs to be specified and should be used. | `string` | no |
-| tags | A list of the tags to be added to the default (`["supabase", "digitalocean", "terraform"]`) Droplet tags. | `list(string)` | no |
+| tags | A list of the tags to be added to the default (`["workloads", "digitalocean", "terraform"]`) Droplet tags. | `list(string)` | no |
 
 ### Outputs
 

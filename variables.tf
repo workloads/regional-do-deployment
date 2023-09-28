@@ -105,7 +105,7 @@ variable "ssh_keys" {
 }
 
 variable "tags" {
-  description = "A list of the tags to be added to the default (`[\"supabase\", \"digitalocean\", \"terraform\"]`) Droplet tags."
+  description = "A list of the tags to be added to the default (`[\"workloads\", \"digitalocean\", \"terraform\"]`) Droplet tags."
   type        = list(string)
   default     = []
 }
