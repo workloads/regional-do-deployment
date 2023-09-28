@@ -15,7 +15,7 @@ resource "digitalocean_certificate" "cert" {
     digitalocean_domain.default
   ]
 
-  lifecycle {
-    prevent_destroy = true
-  }
+  # lifecycle {
+  #   prevent_destroy = true
+  # }
 }
