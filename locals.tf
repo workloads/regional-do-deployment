@@ -42,16 +42,5 @@ locals {
 
   ssh_ip_range_spaces = var.ssh_ip_range == ["0.0.0.0/0"] ? [] : var.ssh_ip_range
 
-  # TODO: Set restricted IP Range for only droplets within same region as spaces bucket
-  # spaces_restricted_ip_range = concat(
-  #   # Need to fix to only allow Droplets
-  #   ["${digitalocean_droplet.this.ipv4_address}"],
-  #   local.ssh_ip_range_spaces
-  # )
-
-  # spaces_ip_range = var.spaces_restrict_ip ? local.spaces_restricted_ip_range : ["0.0.0.0/0", "::/0"]
-
-  spaces_ip_range = var.spaces_restrict_ip ? var.ssh_ip_range : ["0.0.0.0/0", "::/0"]
-
   ssh_fingerprints = var.ssh_keys != [""] ? var.ssh_keys : [digitalocean_ssh_key.this[0].fingerprint]
 }

@@ -15,6 +15,7 @@ resource "digitalocean_loadbalancer" "public" {
     certificate_name = digitalocean_certificate.cert["${each.value}"].name
   }
 
+  # TODO: map this to Nomad :4646 health API
   # healthcheck {
   #   port                   = 80
   #   path                   = "/api/health"

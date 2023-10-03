@@ -8,10 +8,10 @@ resource "digitalocean_droplet" "this" {
   monitoring = true
   backups    = var.droplet_backups
   ssh_keys   = local.ssh_fingerprints
-  tags       = concat(
-                local.tags,
-                ["workloads-${each.value.slugs}"]
-               )
+  tags = concat(
+    local.tags,
+    ["workloads-${each.value.slugs}"]
+  )
 }
 
 resource "digitalocean_ssh_key" "this" {
@@ -34,9 +34,9 @@ resource "digitalocean_firewall" "this" {
     for_each = local.inbound_rule == null ? [] : local.inbound_rule
 
     content {
-      protocol                  = inbound_rule.value.protocol
-      port_range                = inbound_rule.value.port_range
-      source_addresses          = inbound_rule.value.source_addresses
+      protocol         = inbound_rule.value.protocol
+      port_range       = inbound_rule.value.port_range
+      source_addresses = inbound_rule.value.source_addresses
     }
   }
 
