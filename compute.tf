@@ -1,32 +1,32 @@
-resource "digitalocean_droplet" "this" {
+resource "digitalocean_droplet" "main" {
   for_each = { for entry in local.num_droplets : "${entry.num}.${entry.slugs}" => entry }
 
   image      = data.digitalocean_images.available.images[0].id
-  name       = "workloads-droplet-${each.value.slugs}-${each.value.num}"
+  name       = "${var.project_identifier}-droplet-${each.value.slugs}-${each.value.num}"
   region     = each.value.slugs
   size       = var.droplet_size
   monitoring = true
   backups    = var.droplet_backups
   ssh_keys   = local.ssh_fingerprints
-  tags = concat(
-    local.tags,
-    ["workloads-${each.value.slugs}"]
-  )
+  tags       = concat(
+                local.tags,
+                ["${var.project_identifier}-${each.value.slugs}"]
+               )
 }
 
-resource "digitalocean_ssh_key" "this" {
+resource "digitalocean_ssh_key" "main" {
   count = var.ssh_pub_file == "" ? 0 : 1
 
   name       = "Workloads Droplet SSH Key"
   public_key = file(var.ssh_pub_file)
 }
 
-resource "digitalocean_firewall" "this" {
+resource "digitalocean_firewall" "main" {
   for_each = { for entry in local.num_droplets : "${entry.num}.${entry.slugs}" => entry }
 
-  name = "workloads-${each.value.slugs}-${each.value.num}"
+  name = "${var.project_identifier}-${each.value.slugs}-${each.value.num}"
 
-  droplet_ids = [digitalocean_droplet.this["${each.value.num}.${each.value.slugs}"].id]
+  droplet_ids = [digitalocean_droplet.main["${each.value.num}.${each.value.slugs}"].id]
 
   tags = local.tags
 
