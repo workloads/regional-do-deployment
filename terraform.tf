@@ -4,9 +4,6 @@ terraform {
     # The Terraform Cloud configuration will be retrieved from the executing environment
   }
 
-  # see https://developer.hashicorp.com/terraform/language/settings#specifying-a-required-terraform-version
-  required_version = ">= 1.5.0, < 2.0.0"
-
   # see https://developer.hashicorp.com/terraform/language/settings#specifying-provider-requirements
   required_providers {
     # see https://registry.terraform.io/providers/hashicorp/digitalocean/2.30.0/
