@@ -1,26 +1,3 @@
-## REQUIRED SECRETS ##
-
-############
-# IMP. The below secrets/tokens/apis should not be stored in version control
-############
 do_token                 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 spaces_access_key_id     = "xxxxxxxxxxxxxxxxxxxx"
 spaces_secret_access_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-
-## REQUIRED ##
-domain = ""
-
-## OPTIONAL ##
-# no_regions = [""]
-# spaces_restrict_ip = [""]
-# db_size = ""
-# enable_db_con = false
-# db_ip_range = ""
-# num_droplets = 2
-# droplet_size = ""
-# droplet_backups = false
-# enable_ssh = true
-# ssh_pub_file = ""
-# ssh_keys = [37714963]
-# tags = ["", ""]
-# ssh_ip_range = [""]

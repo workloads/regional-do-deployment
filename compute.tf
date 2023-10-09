@@ -1,3 +1,4 @@
+# see https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs/resources/droplet
 resource "digitalocean_droplet" "main" {
   for_each = { for entry in local.num_droplets : "${entry.num}.${entry.slugs}" => entry }
 
@@ -8,12 +9,13 @@ resource "digitalocean_droplet" "main" {
   monitoring = true
   backups    = var.droplet_backups
   ssh_keys   = local.ssh_fingerprints
-  tags       = concat(
-                local.tags,
-                ["${var.project_identifier}-${each.value.slugs}"]
-               )
+  tags = concat(
+    local.tags,
+    ["${var.project_identifier}-${each.value.slugs}"]
+  )
 }
 
+# see https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs/resources/ssh_key
 resource "digitalocean_ssh_key" "main" {
   count = var.ssh_pub_file == "" ? 0 : 1
 
@@ -21,6 +23,7 @@ resource "digitalocean_ssh_key" "main" {
   public_key = file(var.ssh_pub_file)
 }
 
+# see https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs/resources/firewall
 resource "digitalocean_firewall" "main" {
   for_each = { for entry in local.num_droplets : "${entry.num}.${entry.slugs}" => entry }
 

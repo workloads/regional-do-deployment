@@ -1,3 +1,4 @@
+# see https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs/resources/loadbalancer
 resource "digitalocean_loadbalancer" "public" {
   for_each = local.regions
 

@@ -1,16 +1,15 @@
-# Networking Outputs
-output "lb_ip" {
-  description = "The Reserved IP assigned to the droplet."
-  value       = [for lb in digitalocean_loadbalancer.public : lb.ip]
+output "digitalocean_droplet" {
+  description = "Exported Attributes for `digitalocean_droplet.main`."
+  value       = digitalocean_droplet.main
 }
 
-# Compute Outputs
-output "droplet_id" {
-  description = "The ID of the Droplet."
-  value       = [ for drop in digitalocean_droplet.main : drop.id ]
+output "digitalocean_ssh_key" {
+  description = "Exported Attributes for `digitalocean_ssh_key.main`."
+  value       = digitalocean_ssh_key.main
 }
 
-output "droplet_ipv4" {
-  description = "The IPv4 address of the Droplet."
-  value       = [ for drop in digitalocean_droplet.main : drop.ipv4_address ]
+output "digitalocean_firewall" {
+  description = "Exported Attributes for `digitalocean_firewall.main`."
+  value       = digitalocean_firewall.main
 }
+

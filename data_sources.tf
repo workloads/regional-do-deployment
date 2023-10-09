@@ -1,3 +1,4 @@
+# see https://registry.terraform.io/providers/digitalocean/digitalocean/latest/docs/data-sources/regions
 data "digitalocean_regions" "available" {
   filter {
     key    = "available"
