@@ -6,10 +6,10 @@ terraform {
 
   # see https://developer.hashicorp.com/terraform/language/settings#specifying-provider-requirements
   required_providers {
-    # see https://registry.terraform.io/providers/digitalocean/digitalocean/2.30.0/
+    # see https://registry.terraform.io/providers/digitalocean/digitalocean/2.32.0/
     digitalocean = {
       source  = "digitalocean/digitalocean"
-      version = ">= 2.30.0, < 3.0.0"
+      version = ">= 2.32.0, < 3.0.0"
     }
   }
 
