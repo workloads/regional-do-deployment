@@ -31,6 +31,7 @@ Regional Deployment of DigitalOcean-specific Resources
 | project_identifier | Project Identifier. | `string` | yes |
 | tfe_organization | Name of Terraform Cloud Organization. | `string` | yes |
 | tfe_workspace | Name of Terraform Cloud Workspace. | `string` | yes |
+| do_api_endpoint | DigitalOcean API Endpoint. | `string` | no |
 | droplet_backups | Boolean controlling if backups are made. Defaults to true. | `bool` | no |
 | droplet_size | The unique slug that identifies the type of Droplet. | `string` | no |
 | enable_ssh | Boolean enabling connections to droplet via SSH by opening port 22 on the firewall. | `bool` | no |
@@ -45,5 +46,7 @@ Regional Deployment of DigitalOcean-specific Resources
 
 | Name | Description |
 |------|-------------|
-| lb_ip | The Reserved IP assigned to the droplet. |
+| digitalocean_droplet | Exported Attributes for `digitalocean_droplet.main`. |
+| digitalocean_firewall | Exported Attributes for `digitalocean_firewall.main`. |
+| digitalocean_ssh_key | Exported Attributes for `digitalocean_ssh_key.main`. |
 <!-- END_TF_DOCS -->
