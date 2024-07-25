@@ -11,12 +11,12 @@ variable "do_token" {
 }
 
 variable "tfe_organization" {
-  description = "Name of Terraform Cloud Organization."
+  description = "Name of HCP Terraform Organization."
   type        = string
 }
 
 variable "tfe_workspace" {
-  description = "Name of Terraform Cloud Workspace."
+  description = "Name of HCP Terraform Workspace."
   type        = string
 }
 

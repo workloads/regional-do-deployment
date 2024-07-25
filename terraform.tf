@@ -1,7 +1,7 @@
 terraform {
   # see https://developer.hashicorp.com/terraform/language/settings/terraform-cloud
   cloud {
-    # The Terraform Cloud configuration will be retrieved from the executing environment
+    # The HCP Terraform configuration will be retrieved from the executing environment
   }
 
   # see https://developer.hashicorp.com/terraform/language/settings#specifying-provider-requirements

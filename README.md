@@ -29,8 +29,8 @@ Regional Deployment of DigitalOcean-specific Resources
 |------|-------------|------|:--------:|
 | do_token | DO API token with read and write permissions. | `string` | yes |
 | project_identifier | Project Identifier. | `string` | yes |
-| tfe_organization | Name of Terraform Cloud Organization. | `string` | yes |
-| tfe_workspace | Name of Terraform Cloud Workspace. | `string` | yes |
+| tfe_organization | Name of HCP Terraform Organization. | `string` | yes |
+| tfe_workspace | Name of HCP Terraform Workspace. | `string` | yes |
 | do_api_endpoint | DigitalOcean API Endpoint. | `string` | no |
 | droplet_backups | Boolean controlling if backups are made. Defaults to true. | `bool` | no |
 | droplet_size | The unique slug that identifies the type of Droplet. | `string` | no |
