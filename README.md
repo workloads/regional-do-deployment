@@ -17,7 +17,7 @@ Regional Deployment of DigitalOcean-specific Resources
 
 * HashiCorp Cloud Platform (HCP) [Account](https://portal.cloud.hashicorp.com/sign-in).
 * DigitalOcean (DO) [Account](https://m.do.co/c/53544ec84215)
-* Terraform Cloud [Account](https://app.terraform.io/session)
+* HCP Terraform [Account](https://app.terraform.io/session)
 * Terraform `1.5.0` or [newer](https://developer.hashicorp.com/terraform/downloads).
 
 ## Usage
