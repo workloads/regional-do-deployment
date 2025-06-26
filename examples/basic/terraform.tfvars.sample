@@ -1,0 +1,17 @@
+do_token          = "xxx...xxx"
+
+## REQUIRED ##
+project_identifier = "workloads"
+tfe_organization  = "workloads"
+tfe_workspace     = "development"
+
+## OPTIONAL ##
+no_regions = ["nyc1","sfo2","sfo3","sgp1","lon1","fra1","blr1"] ## Possible slugs https://docs.digitalocean.com/products/platform/availability-matrix/
+# num_droplets = 2
+# droplet_size = ""
+# droplet_backups = false
+# enable_ssh = true
+# ssh_pub_file = ""
+ssh_keys = [12345678]
+tags = ["workloads", "development"]
+ssh_ip_range = ["123.456.789.0"]
